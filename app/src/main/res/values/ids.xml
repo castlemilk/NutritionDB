@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="activity_main_row_title" type="id">NutritionDB</item>
+    <item name="activity_main_row_header" type="id">NutritionDB</item>
+    <item name="activity_main_row_description" type="id">NutritionDB</item>
+    <item name="activity_main_row_header_separator" type="id" />
+</resources>
