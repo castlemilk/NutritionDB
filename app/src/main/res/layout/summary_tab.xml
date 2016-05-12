@@ -40,6 +40,7 @@
                 android:text="Small Text"
                 android:id="@+id/SummaryEnergyValueTextView"
                 android:layout_column="1" />
+
         </TableRow>
 
         <TableRow
@@ -59,6 +60,14 @@
                 android:text="Small Text"
                 android:id="@+id/SummaryCarbohydrateTotalValue"
                 android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/SummaryCarbohydrateTotalUnits"
+                android:layout_column="2" />
         </TableRow>
 
         <TableRow
@@ -80,6 +89,14 @@
                 android:text="Small Text"
                 android:id="@+id/SummaryCarbohydrateFibreValue"
                 android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/SummaryCarbohydrateFibreUnits"
+                android:layout_column="2" />
         </TableRow>
 
         <TableRow
@@ -121,6 +138,14 @@
                 android:text="Small Text"
                 android:id="@+id/SummaryCarbohydrateSugarValue"
                 android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/SummaryCarbohydrateSugarUnits"
+                android:layout_column="2" />
         </TableRow>
 
         <TableRow
@@ -140,6 +165,14 @@
                 android:text="Small Text"
                 android:id="@+id/SummaryProteinValue"
                 android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/SummaryProteinUnits"
+                android:layout_column="2" />
         </TableRow>
 
         <TableRow
@@ -159,6 +192,14 @@
                 android:text="Small Text"
                 android:id="@+id/SummaryFatValue"
                 android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/SummaryFatUnits"
+                android:layout_column="2" />
         </TableRow>
     </TableLayout>
 
