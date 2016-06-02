@@ -6,26 +6,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/summaryListnameTextView"
-        android:layout_marginLeft="10sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="g"
         android:id="@+id/summaryListUnitsTextView"
         android:layout_gravity="right"
-        android:layout_alignBottom="@+id/summaryListnameTextView"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="99999"
         android:id="@+id/summaryListValueTextView"
         android:layout_gravity="right"
         android:layout_alignTop="@+id/summaryListUnitsTextView"

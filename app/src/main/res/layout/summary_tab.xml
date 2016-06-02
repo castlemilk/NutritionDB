@@ -37,14 +37,31 @@
         android:layout_below="@+id/view"
         android:layout_margin="15dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">End="87dp" />
 
-        <ListView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/factSheetListView" />
-</android.support.v7.widget.CardView>
+            <ListView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/factSheetListView"
+                android:layout_below="@+id/unitsHeaderTextView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Units"
+                android:id="@+id/unitsHeaderTextView"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="53dp"
+                android:layout_marginEnd="53dp" />
+        </RelativeLayout>
 
 
+    </android.support.v7.widget.CardView>
 
 
 </RelativeLayout>

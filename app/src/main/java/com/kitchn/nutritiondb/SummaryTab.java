@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import com.android.volley.toolbox.NetworkImageView;
 
@@ -17,6 +17,8 @@ public class SummaryTab extends Fragment {
 
     private static final String ARG_TEXT = "text";
     private static HashMap<String, String> itemValueDictionary;
+    private ListView listView1;
+
 
     public SummaryTab() {
     }
@@ -48,35 +50,59 @@ public class SummaryTab extends Fragment {
             text = getArguments().getString(ARG_TEXT);
             if (TextUtils.isEmpty(text)) text = "";
         }
-        String KJ = Integer.toString(Integer.getInteger(itemValueDictionary.get("calorie"))*4);
+        NutritionalData nutData[]  = new NutritionalData[]
+        {
+            new NutritionalData("Energy", "kCal", "100", R.layout.list_item_row_header),
+            new NutritionalData("", "kJ", "410", R.layout.list_item_row),
+            new NutritionalData("Carbohydrates Total", "g", "xx", R.layout.list_item_row_header),
+            new NutritionalData("Sugars", "g", itemValueDictionary.get("carb_sugar"), R.layout.list_item_row_sub),
+            new NutritionalData("Fibre", "g", itemValueDictionary.get("carb_fibre"), R.layout.list_item_row_sub),
+            new NutritionalData("Protein", "g", itemValueDictionary.get("protein"), R.layout.list_item_row),
+            new NutritionalData("Fat", "g", itemValueDictionary.get("fat"), R.layout.list_item_row),
+            new NutritionalData("Sodium", "mg", "2", R.layout.list_item_row),
+            new NutritionalData("Potassium", "mg", "4", R.layout.list_item_row),
+            new NutritionalData("Vitamin C", "mg", "5", R.layout.list_item_row),
+            new NutritionalData("Vitamin D", "mg", "10", R.layout.list_item_row),
+
+        };
+
+        SummaryDataListAdapter adapter  = new SummaryDataListAdapter(getContext(),
+                                                                    R.layout.list_item_row,
+                                                                    nutData);
+
+        listView1 = (ListView)view.findViewById(R.id.factSheetListView);
+        listView1.setAdapter(adapter);
+                                                                //R.layout.list_item_row,
+                                                                //nutData);
+//        String KJ = Integer.toString(Integer.parseInt(itemValueDictionary.get("calorie"))*4);
         // Set energy header:
-        ((TextView) view.findViewById(R.id.SummaryEnergyHeaderTextView)).setText("Energy:  ");
-        // Set energy value:
-        ((TextView) view.findViewById(R.id.SummaryEnergyValueTextView))
-                .setText(itemValueDictionary.get("calorie")+"Cals" + "("+KJ+")");
-
-        // Set carb header total:
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateTotalHeader)).setText("Carbohydrates Total:  ");
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateTotalValue)).setText("Carbohydrates");
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateTotalUnits)).setText(units);
-        // Set carb value sugar:
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateSugarHeader)).setText("Carbohydrates - Sugar:  ");
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateSugarValue)).setText(itemValueDictionary.get("carb_sugar"));
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateSugarUnits)).setText(units);
-        // Set carb value fibre:
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateFibreHeader)).setText("Carbohydrates - Fibre:  ");
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateFibreValue)).setText(itemValueDictionary.get("carb_fibre"));
-        ((TextView) view.findViewById(R.id.SummaryCarbohydrateFibreUnits)).setText(units);
-
-        //Set protein value:
-        ((TextView) view.findViewById(R.id.SummaryProteinHeader)).setText("Protein:  ");
-        ((TextView) view.findViewById(R.id.SummaryProteinValue)).setText(itemValueDictionary.get("protein"));
-        ((TextView) view.findViewById(R.id.SummaryProteinUnits)).setText(units);
-
-        //Set fat value:
-        ((TextView) view.findViewById(R.id.SummaryFatHeader)).setText("Fat:  ");
-        ((TextView) view.findViewById(R.id.SummaryFatValue)).setText(itemValueDictionary.get("fat"));
-        ((TextView) view.findViewById(R.id.SummaryFatUnits)).setText(units);
+//        ((TextView) view.findViewById(R.id.SummaryEnergyHeaderTextView)).setText("Energy:  ");
+//        // Set energy value:
+//        ((TextView) view.findViewById(R.id.SummaryEnergyValueTextView))
+//                .setText(itemValueDictionary.get("calorie")+"Cals" + "("+KJ+")");
+//
+//        // Set carb header total:
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateTotalHeader)).setText("Carbohydrates Total:  ");
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateTotalValue)).setText("Carbohydrates");
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateTotalUnits)).setText(units);
+//        // Set carb value sugar:
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateSugarHeader)).setText("Carbohydrates - Sugar:  ");
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateSugarValue)).setText(itemValueDictionary.get("carb_sugar"));
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateSugarUnits)).setText(units);
+//        // Set carb value fibre:
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateFibreHeader)).setText("Carbohydrates - Fibre:  ");
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateFibreValue)).setText(itemValueDictionary.get("carb_fibre"));
+//        ((TextView) view.findViewById(R.id.SummaryCarbohydrateFibreUnits)).setText(units);
+//
+//        //Set protein value:
+//        ((TextView) view.findViewById(R.id.SummaryProteinHeader)).setText("Protein:  ");
+//        ((TextView) view.findViewById(R.id.SummaryProteinValue)).setText(itemValueDictionary.get("protein"));
+//        ((TextView) view.findViewById(R.id.SummaryProteinUnits)).setText(units);
+//
+//        //Set fat value:
+//        ((TextView) view.findViewById(R.id.SummaryFatHeader)).setText("Fat:  ");
+//        ((TextView) view.findViewById(R.id.SummaryFatValue)).setText(itemValueDictionary.get("fat"));
+//        ((TextView) view.findViewById(R.id.SummaryFatUnits)).setText(units);
 
         return view;
     }
